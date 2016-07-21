@@ -1,0 +1,284 @@
+<html>
+
+<head>
+  <title>Jeopardy! | SGCBAM</title>
+  <!-- Import Google Icon Font -->
+  <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css">
+  <!-- Let browser know website is optimized for mobile -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  
+  <link rel="stylesheet" type="text/css" href="sweetalert.css">
+  <script src="sweetalert.min.js"></script>
+
+  <style>
+  table {
+    background-image: url('http://sgcbam.org/img/logo.png');
+    background-attachment: fixed;
+    background-position: center top;
+    background-repeat: no-repeat;
+    table-layout: fixed;
+  }
+
+  tr {
+    background-color: rgba(255, 255, 255, 0.9);
+  }
+
+  th {
+    text-align: center;
+  }
+
+  .card {
+    padding: 4px 0px;
+    text-align: center;
+  }
+
+  .question.waves-effect {
+    display: table-cell;
+    text-align: center;
+  }
+  </style>
+</head>
+
+<body>
+<div class="row">
+<table>
+  <tr>
+    <th>Data Preparation</th>
+    <th>Data Exploration</th>
+    <th>Report Design</th>
+    <th>Geospatial Visualisation</th>
+    <th>Business Visualisation</th>
+    <th>Geospatial + Business</th>
+  </tr>
+  <tr id="tr-1">
+    <td class="question waves-effect" onClick="swal(
+      'Data Preparation (100)','...');">100</td>
+    <td class="question waves-effect" onClick="swal(
+      'Data Exploration (100)',
+      'Give two reasonable insights for the given data set. Include visualisation(s).');">100</td>
+    <td class="question waves-effect" onClick="swal(
+      'Report Design (100)',
+      'Create an insightful report containing a table and a graph.');">100</td>
+    <td class="question waves-effect" onClick="swal(
+      'Geospatial Visualisation (100)','...');">100</td>
+    <td class="question waves-effect" onClick="swal(
+      'Business Visualisation (100)','...');">100</td>
+    <td class="question waves-effect" onClick="swal(
+      'Geospatial + Business (100)','...');">100</td>
+  </tr>
+  <tr id="tr-2">
+    <td class="question waves-effect" onClick="swal(
+      'Data Preparation (200)','...');">200</td>
+    <td class="question waves-effect" onClick="swal(
+      'Data Exploration (200)',
+      'Give an arguable insight which involves 3 or more variables for the given data set. Include visualisation(s).');">200</td>
+    <td class="question waves-effect" onClick="swal(
+      'Report Design (200)',
+      'Create an insightful report with a dual axis graph object.');">200</td>
+    <td class="question waves-effect" onClick="swal(
+      'Geospatial Visualisation (200)','...');">200</td>
+    <td class="question waves-effect" onClick="swal(
+      'Business Visualisation (200)','...');">200</td>
+    <td class="question waves-effect" onClick="swal(
+      'Geospatial + Business (200)','...');">200</td>
+  </tr>
+  <tr id="tr-3">
+    <td class="question waves-effect" onClick="swal(
+      'Data Preparation (300)','...');">300</td>
+    <td class="question waves-effect" onClick="swal(
+      'Data Exploration (300)',
+      'Give the most meaningful insight for the given data set. Include visualisation(s).');">300</td>
+    <td class="question waves-effect" onClick="swal(
+      'Report Design (300)',
+      'Create an insightful report containing prompts and two or more sections with table or graph objects.');">300</td>
+    <td class="question waves-effect" onClick="swal(
+      'Geospatial Visualisation (300)','...');">300</td>
+    <td class="question waves-effect" onClick="swal(
+      'Business Visualisation (300)','...');">300</td>
+    <td class="question waves-effect" onClick="swal(
+      'Geospatial + Business (300)','...');">300</td>
+  </tr>
+  <tr id="tr-4">
+    <td class="question waves-effect" onClick="swal(
+      'Data Preparation (400)','...');">400</td>
+    <td class="question waves-effect" onClick="swal(
+      'Data Exploration (400)',
+      'Give a reasonable insight which involves two or more derived columns for the given data set. Include visualisation(s).');">400</td>
+    <td class="question waves-effect" onClick="swal(
+      'Report Design (400)',
+      'Create a report containing two or more meaningful predictions.');">400</td>
+    <td class="question waves-effect" onClick="swal(
+      'Geospatial Visualisation (400)','...');">400</td>
+    <td class="question waves-effect" onClick="swal(
+      'Business Visualisation (400)','...');">400</td>
+    <td class="question waves-effect" onClick="swal(
+      'Geospatial + Business (400)','...');">400</td>
+  </tr>
+  <tr id="tr-5">
+    <td class="question waves-effect" onClick="swal(
+      'Data Preparation (500)','...');">500</td>
+    <td class="question waves-effect" onClick="swal(
+      'Data Exploration (500)',
+      'Hypothesise a relationship between the two given data sets. Include visualisation(s).');">500</td>
+    <td class="question waves-effect" onClick="swal(
+      'Report Design (500)',
+      'Create a full-featured report.');">500</td>
+    <td class="question waves-effect" onClick="swal(
+      'Geospatial Visualisation (500)','...');">500</td>
+    <td class="question waves-effect" onClick="swal(
+      'Business Visualisation (500)','...');">500</td>
+    <td class="question waves-effect" onClick="swal(
+      'Geospatial + Business (500)','...');">500</td>
+  </tr>
+</table>
+</div>
+<div class="row">
+  <div class="col s2">
+    <div class="card team-1">
+      <h5>Team 1</h5>
+      <h5 class="score">0</h5>
+      <a class="waves-effect btn-flat number">+100</a>
+      <a class="waves-effect btn-flat number">-100</a>
+      <a class="waves-effect btn-flat number">+200</a>
+      <a class="waves-effect btn-flat number">-200</a>
+      <a class="waves-effect btn-flat number">+300</a>
+      <a class="waves-effect btn-flat number">-300</a>
+      <a class="waves-effect btn-flat number">+400</a>
+      <a class="waves-effect btn-flat number">-400</a>
+      <a class="waves-effect btn-flat number">+500</a>
+      <a class="waves-effect btn-flat number">-500</a>
+      <a class="waves-effect btn-flat clear">Clear</a>
+    </div>
+  </div>
+  <div class="col s2">
+    <div class="card team-2">
+      <h5>Team 2</h5>
+      <h5 class="score">0</h5>
+      <a class="waves-effect btn-flat number">+100</a>
+      <a class="waves-effect btn-flat number">-100</a>
+      <a class="waves-effect btn-flat number">+200</a>
+      <a class="waves-effect btn-flat number">-200</a>
+      <a class="waves-effect btn-flat number">+300</a>
+      <a class="waves-effect btn-flat number">-300</a>
+      <a class="waves-effect btn-flat number">+400</a>
+      <a class="waves-effect btn-flat number">-400</a>
+      <a class="waves-effect btn-flat number">+500</a>
+      <a class="waves-effect btn-flat number">-500</a>
+      <a class="waves-effect btn-flat clear">Clear</a>
+    </div>
+  </div>
+  <div class="col s2">
+    <div class="card team-3">
+      <h5>Team 3</h5>
+      <h5 class="score">0</h5>
+      <a class="waves-effect btn-flat number">+100</a>
+      <a class="waves-effect btn-flat number">-100</a>
+      <a class="waves-effect btn-flat number">+200</a>
+      <a class="waves-effect btn-flat number">-200</a>
+      <a class="waves-effect btn-flat number">+300</a>
+      <a class="waves-effect btn-flat number">-300</a>
+      <a class="waves-effect btn-flat number">+400</a>
+      <a class="waves-effect btn-flat number">-400</a>
+      <a class="waves-effect btn-flat number">+500</a>
+      <a class="waves-effect btn-flat number">-500</a>
+      <a class="waves-effect btn-flat clear">Clear</a>
+    </div>
+  </div>
+  <div class="col s2">
+    <div class="card team-4">
+      <h5>Team 4</h5>
+      <h5 class="score">0</h5>
+      <a class="waves-effect btn-flat number">+100</a>
+      <a class="waves-effect btn-flat number">-100</a>
+      <a class="waves-effect btn-flat number">+200</a>
+      <a class="waves-effect btn-flat number">-200</a>
+      <a class="waves-effect btn-flat number">+300</a>
+      <a class="waves-effect btn-flat number">-300</a>
+      <a class="waves-effect btn-flat number">+400</a>
+      <a class="waves-effect btn-flat number">-400</a>
+      <a class="waves-effect btn-flat number">+500</a>
+      <a class="waves-effect btn-flat number">-500</a>
+      <a class="waves-effect btn-flat clear">Clear</a>
+    </div>
+  </div>
+  <div class="col s2">
+    <div class="card team-5">
+      <h5>Team 5</h5>
+      <h5 class="score">0</h5>
+      <a class="waves-effect btn-flat number">+100</a>
+      <a class="waves-effect btn-flat number">-100</a>
+      <a class="waves-effect btn-flat number">+200</a>
+      <a class="waves-effect btn-flat number">-200</a>
+      <a class="waves-effect btn-flat number">+300</a>
+      <a class="waves-effect btn-flat number">-300</a>
+      <a class="waves-effect btn-flat number">+400</a>
+      <a class="waves-effect btn-flat number">-400</a>
+      <a class="waves-effect btn-flat number">+500</a>
+      <a class="waves-effect btn-flat number">-500</a>
+      <a class="waves-effect btn-flat clear">Clear</a>
+    </div>
+  </div>
+  <div class="col s2">
+    <div class="card team-6">
+      <h5>Team 6</h5>
+      <h5 class="score">0</h5>
+      <a class="waves-effect btn-flat number">+100</a>
+      <a class="waves-effect btn-flat number">-100</a>
+      <a class="waves-effect btn-flat number">+200</a>
+      <a class="waves-effect btn-flat number">-200</a>
+      <a class="waves-effect btn-flat number">+300</a>
+      <a class="waves-effect btn-flat number">-300</a>
+      <a class="waves-effect btn-flat number">+400</a>
+      <a class="waves-effect btn-flat number">-400</a>
+      <a class="waves-effect btn-flat number">+500</a>
+      <a class="waves-effect btn-flat number">-500</a>
+      <a class="waves-effect btn-flat clear">Clear</a>
+    </div>
+  </div>
+</div>
+
+<!-- Import jQuery before materialize.js -->
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<!-- Compiled and minified JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js"></script>
+
+<script>
+
+  function generateRGBA() {
+    var r = Math.floor(Math.random() * 256);
+    var g = Math.floor(Math.random() * 256);
+    var b = Math.floor(Math.random() * 256);
+    var a = Math.floor(Math.random() * 0.2) + 0.8;
+    var rgba = '(' + r + ',' + g + ',' + b + ',' + a + ')'
+    return rgba;
+  }
+
+  $('.question').click(function() {
+    $(this).toggleClass('answered');
+    if ($(this).hasClass('answered')) {
+      $(this).css('background-color', 'rgba' + generateRGBA());
+      $(this).css('color', 'transparent');
+    } else {
+      $(this).css('background-color', 'transparent');
+      $(this).css('color', 'black');
+    }
+  });
+
+  $('.btn-flat.number').click(function() {
+    var score_selector = $(this).siblings('.score');
+    var current_score = $(score_selector).text()
+    var new_score = eval(current_score + $(this).text());
+    $(score_selector).text(new_score);
+  });
+
+  $('.btn-flat.clear').click(function() {
+    var score_selector = $(this).siblings('.score');
+    $(score_selector).text(0);
+  });
+  
+</script>
+
+</body>
+</html>
