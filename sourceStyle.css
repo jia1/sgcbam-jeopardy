@@ -1,0 +1,25 @@
+table {
+  background-image: url('classOn.png');
+  background-attachment: fixed;
+  background-position: center top;
+  background-repeat: no-repeat;
+  table-layout: fixed;
+}
+
+tr {
+  background-color: rgba(255, 255, 255, 0.7);
+}
+
+th {
+  text-align: center;
+}
+
+.card {
+  padding: 4px 0px;
+  text-align: center;
+}
+
+.question.waves-effect {
+  display: table-cell;
+  text-align: center;
+}
