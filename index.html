@@ -145,74 +145,75 @@
 </table>
 </div>
 <div class="row">
-  <div class="col s2">
+  <div class="col s3">
     <div class="card team-1">
       <h5>Team 1</h5>
       <h5 class="score">0</h5>
       <a class="waves-effect btn-flat number">+100</a>
-      <a class="waves-effect btn-flat number">-100</a>
+      <a class="waves-effect btn-flat number">-100</a><br>
       <a class="waves-effect btn-flat number">+200</a>
-      <a class="waves-effect btn-flat number">-200</a>
+      <a class="waves-effect btn-flat number">-200</a><br>
       <a class="waves-effect btn-flat number">+300</a>
-      <a class="waves-effect btn-flat number">-300</a>
+      <a class="waves-effect btn-flat number">-300</a><br>
       <a class="waves-effect btn-flat number">+400</a>
-      <a class="waves-effect btn-flat number">-400</a>
+      <a class="waves-effect btn-flat number">-400</a><br>
       <a class="waves-effect btn-flat number">+500</a>
-      <a class="waves-effect btn-flat number">-500</a>
+      <a class="waves-effect btn-flat number">-500</a><br>
       <a class="waves-effect btn-flat clear">Clear</a>
     </div>
   </div>
-  <div class="col s2">
+  <div class="col s3">
     <div class="card team-2">
       <h5>Team 2</h5>
       <h5 class="score">0</h5>
       <a class="waves-effect btn-flat number">+100</a>
-      <a class="waves-effect btn-flat number">-100</a>
+      <a class="waves-effect btn-flat number">-100</a><br>
       <a class="waves-effect btn-flat number">+200</a>
-      <a class="waves-effect btn-flat number">-200</a>
+      <a class="waves-effect btn-flat number">-200</a><br>
       <a class="waves-effect btn-flat number">+300</a>
-      <a class="waves-effect btn-flat number">-300</a>
+      <a class="waves-effect btn-flat number">-300</a><br>
       <a class="waves-effect btn-flat number">+400</a>
-      <a class="waves-effect btn-flat number">-400</a>
+      <a class="waves-effect btn-flat number">-400</a><br>
       <a class="waves-effect btn-flat number">+500</a>
-      <a class="waves-effect btn-flat number">-500</a>
+      <a class="waves-effect btn-flat number">-500</a><br>
       <a class="waves-effect btn-flat clear">Clear</a>
     </div>
   </div>
-  <div class="col s2">
+  <div class="col s3">
     <div class="card team-3">
       <h5>Team 3</h5>
       <h5 class="score">0</h5>
       <a class="waves-effect btn-flat number">+100</a>
-      <a class="waves-effect btn-flat number">-100</a>
+      <a class="waves-effect btn-flat number">-100</a><br>
       <a class="waves-effect btn-flat number">+200</a>
-      <a class="waves-effect btn-flat number">-200</a>
+      <a class="waves-effect btn-flat number">-200</a><br>
       <a class="waves-effect btn-flat number">+300</a>
-      <a class="waves-effect btn-flat number">-300</a>
+      <a class="waves-effect btn-flat number">-300</a><br>
       <a class="waves-effect btn-flat number">+400</a>
-      <a class="waves-effect btn-flat number">-400</a>
+      <a class="waves-effect btn-flat number">-400</a><br>
       <a class="waves-effect btn-flat number">+500</a>
-      <a class="waves-effect btn-flat number">-500</a>
+      <a class="waves-effect btn-flat number">-500</a><br>
       <a class="waves-effect btn-flat clear">Clear</a>
     </div>
   </div>
-  <div class="col s2">
+  <div class="col s3">
     <div class="card team-4">
       <h5>Team 4</h5>
       <h5 class="score">0</h5>
       <a class="waves-effect btn-flat number">+100</a>
-      <a class="waves-effect btn-flat number">-100</a>
+      <a class="waves-effect btn-flat number">-100</a><br>
       <a class="waves-effect btn-flat number">+200</a>
-      <a class="waves-effect btn-flat number">-200</a>
+      <a class="waves-effect btn-flat number">-200</a><br>
       <a class="waves-effect btn-flat number">+300</a>
-      <a class="waves-effect btn-flat number">-300</a>
+      <a class="waves-effect btn-flat number">-300</a><br>
       <a class="waves-effect btn-flat number">+400</a>
-      <a class="waves-effect btn-flat number">-400</a>
+      <a class="waves-effect btn-flat number">-400</a><br>
       <a class="waves-effect btn-flat number">+500</a>
-      <a class="waves-effect btn-flat number">-500</a>
+      <a class="waves-effect btn-flat number">-500</a><br>
       <a class="waves-effect btn-flat clear">Clear</a>
     </div>
   </div>
+  <!--
   <div class="col s2">
     <div class="card team-5">
       <h5>Team 5</h5>
@@ -247,7 +248,14 @@
       <a class="waves-effect btn-flat clear">Clear</a>
     </div>
   </div>
+  -->
 </div>
+
+<!-- Import audio -->
+<audio id="refreshAudio" src="refresh.mp3" ></audio>
+<audio id="questionAudio" src="questionOnClick.wav" ></audio>
+<audio id="plusAudio" src="plusOnClick.wav" ></audio>
+<audio id="minusAudio" src="minusOnClick.wav" ></audio>
 
 <!-- Import jQuery before materialize.js -->
 <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
@@ -274,6 +282,7 @@
       $(this).css('background-color', 'transparent');
       $(this).css('color', 'black');
     }
+    playQuestionSound();
   });
 
   $('.btn-flat.number').click(function() {
@@ -281,12 +290,46 @@
     var current_score = $(score_selector).text()
     var new_score = eval(current_score + $(this).text());
     $(score_selector).text(new_score);
+    if (new_score > current_score) {
+      playPlusSound();
+    } else {
+      playMinusSound();
+    }
   });
 
   $('.btn-flat.clear').click(function() {
     var score_selector = $(this).siblings('.score');
     $(score_selector).text(0);
   });
+
+  const playQuestionSound = () => {
+    const audio = document.getElementById("questionAudio");
+    audio.play();
+  };
+
+  const playPlusSound = () => {
+    const audio = document.getElementById("plusAudio");
+    audio.play();
+    setTimeout(() => {
+        audio.pause();
+        audio.currentTime = 0;
+    }, 1000);
+  };
+
+  const playMinusSound = () => {
+    const audio = document.getElementById("minusAudio");
+    audio.play();
+    setTimeout(() => {
+        audio.pause();
+        audio.currentTime = 0;
+    }, 1000);
+  };
+
+  const playRefreshSound = () => {
+    const audio = document.getElementById("refreshAudio");
+    audio.play();
+  };
+  playRefreshSound();
   
 </script>
 
